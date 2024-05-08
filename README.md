@@ -25,7 +25,7 @@ A simple, one-click deploy web app to simplify [the process of validating In-App
 
 ### Deployment
 
-1. (Optional, but highly recommended) Download [IAPVerifierKeyGenerator.playground](IAPVerifierKeyGenerator.playground) and run the playground. Copy the highlighted Base-64 encoded values below. Save these values for the next steps.
+1. (Optional, but highly recommended) Download [IAPVerifierKeyGenerator.playground](meta/IAPVerifierKeyGenerator.playground) and run the playground. Copy the highlighted Base-64 encoded values below. Save these values for the next steps.
 
    ![](playground1.png)
 
