@@ -1,22 +1,22 @@
-django==1.11.29
+django==5.0.6
 
 # See https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#using-argon2-with-django
 django[argon2]
 django[bcrypt]
 
 # AWS
-django-storages-redux==1.3.2
+django-storages-redux==1.3.3
 boto==2.46.1
 
 # Misc
 raven
-django-lionheart-helpers==3.0.0
+django-lionheart-helpers==3.0.4
 
-django-localflavor==1.4.1
-gunicorn==19.7.1
+django-localflavor==4.0
+gunicorn==22.0.0
 
 foreman==0.9.7
-rerun==1.0.28
+rerun==1.0.30
 gevent
 requests
 pycryptodome
