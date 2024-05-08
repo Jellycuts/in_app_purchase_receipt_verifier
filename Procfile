@@ -1,1 +1,1 @@
-web: gunicorn -c conf/gunicorn/production.py wsgi
+web: gunicorn iap.wsgi
