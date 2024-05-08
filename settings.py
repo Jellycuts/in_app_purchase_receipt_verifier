@@ -1,5 +1,5 @@
 import os
-import imp
+import importlib.machinery
 # from S3 import CallingFormat
 # from boto.s3.connection import OrdinaryCallingFormat
 
@@ -209,8 +209,10 @@ settings_path = lambda env: os.path.join(BASE, 'conf', 'settings', '{}.py'.forma
 try:
     from local_settings import *
 except ImportError:
-    environment = os.environ.get('APP_ENVIRONMENT', 'production')
-    config = imp.load_source('local_settings', settings_path(environment))
+    environment = os.environ.get('APP_ENVIRONMENT', 'production')    
+    loader = importlib.machinery.SourceFileLoader('local_settings', settings_path(environment))
+    module = loader.load_module()
+
     from local_settings import *
 
 # Uncomment if using django-celery

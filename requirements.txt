@@ -12,11 +12,11 @@ boto==2.46.1
 raven
 django-lionheart-helpers==3.0.4
 
-django-localflavor==4.0
-gunicorn==22.0.0
+django-localflavor==1.4.1
+gunicorn==19.7.1
 
 foreman==0.9.7
-rerun==1.0.30
+rerun==1.0.28
 gevent
 requests
 pycryptodome
