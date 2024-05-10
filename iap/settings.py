@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-5_55-h=ocrp5qt$qxiay49h2gg%*cw-fbxq8=(6qtykz049lrr
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "localhost",
     ".herokuapp.com"
 ]
-
 
 # Application definition
 
@@ -125,3 +125,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APP_SPECIFIC_SHARED_SECRET = os.environ.get("APP_SPECIFIC_SHARED_SECRET")
+RECEIPT_VERIFICATION_ENVIRONMENT = os.environ.get("RECEIPT_VERIFICATION_ENVIRONMENT")
+BASE64_ENCODED_SIGNING_KEY = os.environ.get("BASE64_ENCODED_SIGNING_KEY")
+
+if RECEIPT_VERIFICATION_ENVIRONMENT == "production":
+    RECEIPT_VERIFICATION_URL = "https://buy.itunes.apple.com/verifyReceipt"
+else:
+    RECEIPT_VERIFICATION_URL = "https://sandbox.itunes.apple.com/verifyReceipt"
